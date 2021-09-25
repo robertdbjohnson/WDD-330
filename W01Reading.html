@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W01Reading</title>
+</head>
+<body>
+    <pre>
+        Example of local storage
+
+        function clickCounter() {
+            if(typeof(Storage) !== "undefined") {
+              if (localStorage.clickcount) {
+                localStorage.clickcount = Number(localStorage.clickcount)+1;
+              } else {
+                localStorage.clickcount = 1;
+              }
+              document.getElementById("result").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+            } else {
+              document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+            }
+        }
+
+        I found this video to be very helpful in learning about storage
+        https://www.youtube.com/watch?v=GihQAC1I39Q
+
+        
+    </pre>
+</body>
+</html>

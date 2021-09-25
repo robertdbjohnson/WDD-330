@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>W02 Team Activity</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <h1>01</h1>
+        <input type="text" id="input">
+        <button type="button" onclick="myFunction()">Output</button>
+        <div id="output"></div><br>
+        <br>
+
+        <h1>02</h1>
+        <input type="number" id="number">
+        <button type="button" onclick="calc()">Calculate</button>
+        <div id="total"></div><br>
+        <br>
+
+        <h1>03</h1>
+        <input type="number" id="add1">+<input type="number" id="add2">
+        <button type="button" onclick="addition()">Add the numbers</button>
+        <div id="sum"></div>
+
+        <script>
+            function myFunction() {
+                document.getElementById("output").innerHTML = document.getElementById("input").value;
+            }
+
+            function calc() {
+                var number = document.getElementById("number").value;
+                var total = 0;
+                while (number > 0) {
+                    total += parseInt(number);
+                    number--;
+                }
+                document.getElementById("total").innerHTML = total;
+            }
+
+            function addition() {
+                var add1 = document.getElementById("add1").value;
+                var add2 = document.getElementById("add2").value;
+                var sum = parseInt(add1) + parseInt(add2);
+                document.getElementById("sum").innerHTML = sum;
+            }
+        </script>
+    </body>
+</html>

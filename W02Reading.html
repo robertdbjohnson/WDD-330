@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W02Reading</title>
+</head>
+<body>
+    <pre>
+        W02Reading Notes
+
+Keep your code DRY (Don't repeat yourself)
+
+__________________________________________________________________________
+
+I found this information interesting about arguments...
+
+function arguments(){
+    return arguments;
+}
+
+arguments('hello', NaN);
+<< { '0': 'hello', '1': NaN }
+arguments(1,2,3,4,5);
+<< { '0': 1, '1': 2, '2': 3, '3': 4, '4': 5 }
+
+function rest(...args){
+    for(arg of args){
+        console.log(arg);
+    }
+}
+rest(2,4,6,8);
+<< 2
+4
+6
+8
+
+__________________________________________________________________________
+
+
+Arrow functions...this is kinda new to me...it really cool though
+
+const square = x => x*x;
+
+const add = (x,y) => x + y;
+
+const hello = () => alert('Hello World!');
+
+const tax = (salary) => {
+    const taxable = salary - 8000;
+    const lowerRate = 0.25 * taxable;
+    taxable = taxable - 20000;
+    const higherRate = 0.4 * taxable;
+    return lowerRate + higherRate;
+}
+
+__________________________________________________________________________
+
+
+I was reading about variable hoisting, and I think I knew what it was, but
+I just didin't know that it was called hoisting...
+
+__________________________________________________________________________
+
+Callbacks...
+
+Remember at the start of this chapter when we said that functions in 
+JavaScript are first-class objects, so they behave in just the same way as
+every other object? This means that functions can also be given as a 
+parameter to another function. A function that is passed as an argument 
+to another is known as a callback.
+    </pre>
+</body>
+</html>

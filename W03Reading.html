@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W03Reading</title>
+</head>
+<body>
+    <pre>
+        Namespacing…
+        I thought this stuff was cool and helpful for group projects and projects at work
+
+        Naming collisions occur when the same variable or function name is used for different 
+        purposes by code sharing the same scope. This might not seem likely, but imagine if you 
+        have lots of code that has been created over time – you might end up reusing a variable 
+        name without realizing. The problem becomes more likely if you use code libraries from 
+        other developers or work on code in teams, as you might choose the same name for a 
+        function as another member of the team.
+
+        ________________________________________________________________________________________________________
+
+        JSON…
+        I already knew about these functions, but I thought I should write these down to help 
+        me know the difference between them
+
+        The parse() method takes a string of data in JSON format and returns a JavaScript object
+
+        The stringify() method does the opposite, taking a JavaScript object and returning a string of JSON data
+
+        ________________________________________________________________________________________________________
+
+        The RegExp Object...
+
+        A regular expression (or RegExp, for short) is a pattern that can be used to search strings for 
+        matches to the pattern. A common use is 'find and replace' type operations. For example, say you
+        were looking for any word ending in 'ing', you could use the regular expression /[a-zA-Z]+ing$/ .
+
+        If that example looks a bit confusing, don’t worry, it will become clear as we move through this
+        section. Regular expressions can look a little strange; in fact, they're something of a dark art
+        that could easily fill a whole book! They are certainly useful when manipulating text strings
+
+        const pattern = /[a-zA-Z]+ing$/;
+
+        RegExp Methods...
+
+        Once you’ve created a regular expression object, you can use the test() method to see if a string
+        (passed to the method as a parameter) matches the regular expression pattern. It returns true if
+        the pattern is in the string, and false if it isn’t.
+
+        We can see an example of the test() method used below, using the same pattern we created earlier
+        that tests if a word ends in 'ing':
+
+        pattern.test('joke');
+        << false
+
+        pattern.test('joking');
+        << true
+
+        pattern.test('jokingly');
+        << false
+
+        ________________________________________________________________________________________________________
+
+        You can chain methods like so...
+
+        let ladder = {
+            step: 0,
+            up() {
+              this.step++;
+              return this;
+            },
+            down() {
+              this.step--;
+              return this;
+            },
+            showStep() {
+              alert( this.step );
+              return this;
+            }
+        };
+
+        ladder.up();
+        ladder.up();
+        ladder.down();
+        ladder.showStep(); // 1
+
+        ladder.up().up().down().showStep(); // 1
+
+        ladder
+            .up()
+            .up()
+            .down()
+            .up()
+            .down()
+            .showStep(); // 1
+
+    </pre>
+    <script src="W03Reading.js"></script>
+</body>
+</html>
+
+
+
+

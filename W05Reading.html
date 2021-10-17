@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W05Reading</title>
+</head>
+<body>
+    <pre>
+        Stack Traces
+            An exception will also produce astack trace. This is a sequence of functions or method calls that lead 
+            to the point where the error occurred. It’s often not just a single function or method call that causes 
+            an error. A stack trace will work backwards from the point at which the error occurred to identify the 
+            original function or method that started the sequence. The example below shows how a stack trace can 
+            help you find where an error originates from:
+            function three(){ unicorn(); }
+            function two(){ three(); }
+            function one(){ two(); }
+            one();
+            << index.html:13 Uncaught ReferenceError: unicorn is not defined
+                at three (index.html:13)
+                at two (index.html:17)
+                at one (index.html:21)
+                at index.html:24`
+                In this example, we have three functions: function one() invokes function two() , which then invokes 
+                function three() . Function three() then invokes the unicorn() function that doesn't exist and causes 
+                an error. We can use the stack trace to work backwards and see that this error was caused by invoking 
+                the function one() in the first place.
+
+        Linting Tools
+            Linting tools such asJS Lint,JS Hint,andES Lintcan be used to test the quality of JavaScript code, beyond 
+            simply using strict mode. They are designed to highlight any sloppy programming practices or syntax errors, 
+            and will complain if certain style conventions are not followed, such as how code is indented. They can be 
+            very unforgiving and use some opinionated coding conventions, such as not using the ++ and -- increment 
+            operators (in the case of JS Lint). Linting tools are also useful for enforcing a programmingstyle guide. 
+            This is particularly useful when you are working in a team, as it ensures everybody follows the same conventions.
+                
+            It's possible to add a linting tool as a text-editor plugin; this will then highlight any sloppy code as 
+            you type. Another option is to use an online linting tool that allows you to simply paste onto a page for 
+            feedback. Another option is to install linting software on your computer using npm. This can then be run 
+            as part of your workflow.
+                
+            Passing a lint test is no guarantee that your code is correct, but it will mean it will be more consistent 
+                and less likely to have problems.
+                
+            You can read more about how to use ESLint inthis article on SitePoint.
+            
+        What I've found helpful for me throughout my coding experience is that using the console helps me figure out a
+        lot of basic coding problems and helps me figure out where the problem is and what it might be that is the problem.
+
+        Throwing Exceptions
+            function squareRoot(number) {
+                'use strict';
+                if (number < 0) {
+                    throw new RangeError('You can't find the square root of negative numbers')
+                }
+                return Math.sqrt(number);
+            };
+            
+        
+    </pre>
+</body>
+</html>
+
